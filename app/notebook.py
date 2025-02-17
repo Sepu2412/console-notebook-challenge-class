@@ -49,5 +49,9 @@ class Notebook:
                 print(f"{note.code} - {note.tittle}: {note.text}")
 
     def list_important_notes(self) _> None:
+    for note in self.notes:
+        if note.importance in [Note.High, Note.Medium]:
+            print(f"{note.code} - {note.tittle}: {note.text}")
+
 
 
