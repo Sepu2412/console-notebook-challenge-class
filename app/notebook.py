@@ -29,3 +29,25 @@ class Notebook:
         self.notes: list[Note]= []
 
     def add_note(self, tittle: str , text: str , importance: str )-> int:
+        new_code: int = len(self.notes)+1
+        note: Note = Note(new_code, tittle, text , importance)
+        self.notes.append(note)
+        return new_code
+
+    def delete_note(self, code: int )-> bool:
+        for note in self.notes:
+            if note.code == code:
+                self.notes.remove(note)
+                return True
+        return False
+
+    def list_notes(self) -> None:
+        if not self.notes:
+            print("no hay notas registradas.")
+        else:
+            for note in self.notes:
+                print(f"{note.code} - {note.tittle}: {note.text}")
+
+    def list_important_notes(self) _> None:
+
+
